@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_restful import reqparse
 from yelp.client import Client
@@ -21,7 +21,7 @@ def getYelpResponse(loc):
 
 	params = {
 	    'radius_filter':40000,
-	    'cll':[loc[0],loc[1]]
+	    'cll':loc[0],loc[1]
 	    }
 
 	#location = raw_input("Enter your city or state to find the best persian resturant")
@@ -29,11 +29,6 @@ def getYelpResponse(loc):
 	businesses = response.businesses
 	total = len(businesses)
 	randomize = randint(0, total-1)
-	#for business in businesses:
-	#	if(business.rating > minRating):
-	#		minRating = business.rating
-	#		bestPershResturant = business.name
-	#		pershDescription = business.snippet_text
 
 	return u' '.join(businesses[randomize].name, '-').join(businesses[randomize].rating, ':')  \
 			.join(businesses[randomize].snippet_text, '.').encode('utf-8').strip()
