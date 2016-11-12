@@ -21,7 +21,7 @@ def getYelpResponse(loc):
 
 	params = {
 	    'radius_filter':40000,
-	    'cll':loc[0],loc[1]
+	    'cll':[loc[0],loc[1]]
 	    }
 
 	#location = raw_input("Enter your city or state to find the best persian resturant")
