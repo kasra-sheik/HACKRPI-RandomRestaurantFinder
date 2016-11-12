@@ -21,6 +21,7 @@ def getYelpResponse(lat, lon):
 
 	params = {
 	    'radius_filter':2000
+	    'term':'food'
 	    #'cll':[loc[0],loc[1]]
 	    }
 
