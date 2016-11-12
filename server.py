@@ -8,43 +8,49 @@ from random import randint
 app = Flask(__name__)
 api = Api(app)
 
-def getYelpResponse(loc):
+def getYelpResponse(lat, lon):
 	auth = Oauth1Authenticator(
 	    consumer_key="836TVgpgYXuyjggygv_T2w",
 	    consumer_secret="LzvOSGMWAVv-bgkagkTrnW82QQ0",
 	    token="fmu5xYvwO4BCflsWEwXqq5YV4aCMtRHk",
 	    token_secret="ji0Aq3aD156PDI0QCT5Q41opWoA"
 	)
-
-
+	#loc1 = float(loc.split(',')[0].strip)
+	#loc2 = float(loc.split(',')[1])
 	client = Client(auth)
 
 	params = {
-	    'radius_filter':40000,
-	    'cll':loc[0],loc[1]
+	    'radius_filter':2000
+	    #'cll':[loc[0],loc[1]]
 	    }
 
 	#location = raw_input("Enter your city or state to find the best persian resturant")
-	response = client.search(**params)
+	response = client.search_by_coordinates(lat, lon, **params)
 	businesses = response.businesses
 	total = len(businesses)
 	randomize = randint(0, total-1)
 
-	return u' '.join(businesses[randomize].name, '-').join(businesses[randomize].rating, ':')  \
-			.join(businesses[randomize].snippet_text, '.').encode('utf-8').strip()
+	return str(businesses[randomize].name) + '-' + str(businesses[randomize].rating)  \
+			+ ':' + str(businesses[randomize].snippet_text)
 
 
 class CreateUser(Resource):
 
 	def post(self):
 		try:
-			location = request.form.get('location')
+			#location = request.form['location']
+
 
 			parser = reqparse.RequestParser()
 			parser.add_argument('restuarant', type=unicode, help='restaurant')
-			args = parser.parse_args()
-			args['restaurant'] = getYelpResponse(location)
+			parser.add_argument('latitude', type=float, help='lat')
+			parser.add_argument('longitude', type=float, help='long')
 
+			args = parser.parse_args()
+			lat = request.form['latitude']
+			lon = request.form['longitude']
+			args['restaurant'] = getYelpResponse(lat, lon)
+			
 			return {'Restaurant': args['restaurant']}
 
 		except Exception as e:
