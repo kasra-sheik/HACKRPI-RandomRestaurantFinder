@@ -14,7 +14,8 @@ class CreateUser(Resource):
 	def hello():
 		return "Welcome to the Flask App!"
 
-	def post(self):
+
+	def get(self):
 		try:
 			parser = reqparse.RequestParser()
 			parser.add_argument('location', type=str, help='Email address')
@@ -48,7 +49,7 @@ class CreateUser(Resource):
 
 			args['restaurant'] = str(bestPershResturant) + "-" + str(minRating) + str(pershDescription)
 			return {'location': args['location'], 'restaurant':args['restaurant']}
-
+			
 		except Exception as e:
 			return {'error': str(e)}
 
