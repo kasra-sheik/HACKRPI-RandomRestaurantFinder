@@ -1,1 +1,1 @@
-web: gunicorn RandomRestaurantFinder:app
+web: gunicorn server:app
