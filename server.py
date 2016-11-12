@@ -57,7 +57,7 @@ class CreateUser(Resource):
 			return {'error': str(e)}
 
 	def get(self):
-		return {'hello': 'world'}
+		return {'hello': 'WORLD'}
 
 
 api.add_resource(CreateUser, '/')
