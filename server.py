@@ -20,7 +20,7 @@ def getYelpResponse(lat, lon):
 	client = Client(auth)
 
 	params = {
-	    'radius_filter':2000
+	    'radius_filter':2000,
 	    'term':'food'
 	    #'cll':[loc[0],loc[1]]
 	    }
@@ -29,10 +29,18 @@ def getYelpResponse(lat, lon):
 	response = client.search_by_coordinates(lat, lon, **params)
 	businesses = response.businesses
 	total = len(businesses)
-	randomize = randint(0, total-1)
+	business = businesses[randint(0, total-1)]
+	jsonString = {
+	'name': str(business.name),
+	'img_url': str(business.image_url),
+	'review_count': str(business.review_count),
+	'rating': str(business.rating),
+	'desc': str(business.snippet_text),
+	'location': str(business.location),
+	'deals': str(business.deals)
+	}
 
-	return str(businesses[randomize].name) + '-' + str(businesses[randomize].rating)  \
-			+ ':' + str(businesses[randomize].snippet_text)
+	return jsonString
 
 
 class CreateUser(Resource):
@@ -50,9 +58,9 @@ class CreateUser(Resource):
 			args = parser.parse_args()
 			lat = request.form['latitude']
 			lon = request.form['longitude']
-			args['restaurant'] = getYelpResponse(lat, lon)
+			#args['restaurant'] = getYelpResponse(lat, lon)
 			
-			return {'Restaurant': args['restaurant']}
+			return getYelpResponse(lat,lon)#{'Restaurant': args['restaurant']}
 
 		except Exception as e:
 			return {'error': str(e)}
