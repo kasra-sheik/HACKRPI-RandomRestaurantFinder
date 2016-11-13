@@ -42,7 +42,8 @@ def getYelpResponse(lat, lon, keyword, distance, ratings):
 	'location': str(business.location),
 	'deals': str(business.deals),
 	'phone': str(business.display_phone),
-	'rating_img': str(business.rating_img_url_small),
+	'rating_img': str(business.rating_img_url_large),
+	'url': str(business.url),
 	'categories': list(business.categories)
 	}
 
