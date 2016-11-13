@@ -1,7 +1,8 @@
 $(function() {
     $('button').click(function() {
         var restaurant = $('#restaurant').val();
-        var quality = $('#quality').val();
+        var distance = $('#distance').val();
+        alert(distance);
         $.ajax({
             url: '/',
             data: $('form').serialize(),

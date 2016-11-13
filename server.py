@@ -30,7 +30,7 @@ def getYelpResponse(lat, lon, keyword, distance, ratings):
 	businesses = response.businesses
 	total = len(businesses)
 	business = businesses[randint(0, total-1)]
-	while float(business.rating) < ratings:
+	while float(business.rating) < float(ratings):
 		business = businesses[randint(0, total-1)]
 
 	jsonString = {
@@ -75,7 +75,7 @@ class CreateUser(Resource):
 				keyword = 'restaurant'
 			distance = request.form.get('distance', None)
 			if distance is None:
-				distance = 2000
+				distance = 5000
 			ratings = request.form.get('ratings', None)
 			if ratings is None:
 				ratings = 1
