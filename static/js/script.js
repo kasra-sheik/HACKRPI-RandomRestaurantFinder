@@ -1,7 +1,7 @@
 $(function() {
     $('button').click(function() {
-        var restaurant = $('#restaurant').val();
-        var distance = $('#distance').val();
+        var keyword = $('#keyword').val();
+        var distance = $('#range1').val();
         alert(distance);
         $.ajax({
             url: '/',

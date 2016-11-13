@@ -71,6 +71,7 @@ div.hidden{
   display: none
 }
 
+
 </style>
 </head>
 <body>
@@ -103,6 +104,7 @@ function myFunction(x) {
   function showValue1(newValue)
   {
     document.getElementById("range1").innerHTML=newValue;
+    document.getElementById("range1").value = newValue;
   }
   </script>
 
@@ -134,7 +136,7 @@ function myFunction(x) {
   <input type="checkbox" value="Delivery"><br>
   <p></p>
 
-   <input type="restaurant" name="restaurant" id="restaurant" class="form-control" placeholder="Type of Food" required autofocus>
+   <input type="keyword" name="keyword" id="keyword" class="form-control" placeholder="Type of Food" required autofocus>
 </div>
 
         <button type="button" id = "inner-widget" class="button-link">Find Eatery</button>
