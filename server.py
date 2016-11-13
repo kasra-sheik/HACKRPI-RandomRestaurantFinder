@@ -40,7 +40,7 @@ def getYelpResponse(lat, lon, keyword):
 	'location': str(business.location),
 	'deals': str(business.deals),
 	'phone': str(business.display_phone),
-	'rating_img': str(business.rating_img_url),
+	'rating_img': str(business.rating_img_url_small),
 	'categories': list(business.categories)
 	}
 
