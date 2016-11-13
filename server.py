@@ -37,7 +37,9 @@ def getYelpResponse(lat, lon):
 	'rating': str(business.rating),
 	'desc': str(business.snippet_text),
 	'location': str(business.location),
-	'deals': str(business.deals)
+	'deals': str(business.deals),
+	'phone': str(business.display_phone),
+	'rating_img': str(business.rating_img_url)
 	}
 
 	return jsonString
@@ -48,7 +50,6 @@ class CreateUser(Resource):
 	def post(self):
 		try:
 			#location = request.form['location']
-
 
 			parser = reqparse.RequestParser()
 			parser.add_argument('restuarant', type=unicode, help='restaurant')
