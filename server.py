@@ -1,14 +1,15 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restful import Resource, Api
 from flask_restful import reqparse
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
 from random import randint
+import json
 
 app = Flask(__name__)
 api = Api(app)
 
-def getYelpResponse(lat, lon):
+def getYelpResponse(lat, lon, keyword):
 	auth = Oauth1Authenticator(
 	    consumer_key="836TVgpgYXuyjggygv_T2w",
 	    consumer_secret="LzvOSGMWAVv-bgkagkTrnW82QQ0",
@@ -20,8 +21,8 @@ def getYelpResponse(lat, lon):
 	client = Client(auth)
 
 	params = {
-	    'radius_filter':2000,
-	    'term':'food'
+	    'radius_filter':40000,
+	    'term':keyword
 	    #'cll':[loc[0],loc[1]]
 	    }
 
@@ -51,24 +52,31 @@ class CreateUser(Resource):
 	def post(self):
 		try:
 			#location = request.form['location']
-
 			parser = reqparse.RequestParser()
 			parser.add_argument('restuarant', type=unicode, help='restaurant')
 			parser.add_argument('latitude', type=float, help='lat')
 			parser.add_argument('longitude', type=float, help='long')
-
 			args = parser.parse_args()
-			lat = request.form['latitude']
-			lon = request.form['longitude']
+			lat = 43.7#request.form['latitude']
+			lon = -73.8#request.form['longitude']
 			#args['restaurant'] = getYelpResponse(lat, lon)
 			
-			return getYelpResponse(lat,lon)#{'Restaurant': args['restaurant']}
+			return getYelpResponse(lat,lon, request.form['restaurant'])#{'Restaurant': args['restaurant']}
 
 		except Exception as e:
 			return {'error': str(e)}
 
 	def get(self):
 		return {'hello': 'WORLD'}
+
+	@app.route('/testing')
+	def submitQuery():
+		return render_template('webUI.html')
+
+#	@app.route('/testingPOST', methods=['POST'])
+#	def submitPOST():
+#		food = request.form['food']
+#		quality = request.form['quality']
 
 
 api.add_resource(CreateUser, '/')
