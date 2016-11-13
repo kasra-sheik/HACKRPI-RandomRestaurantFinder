@@ -29,9 +29,18 @@ def getYelpResponse(lat, lon, keyword, distance, ratings):
 	response = client.search_by_coordinates(lat, lon, **params)
 	businesses = response.businesses
 	total = len(businesses)
+	if(total == 0):
+		return "a business wasn't found.."
+
 	business = businesses[randint(0, total-1)]
 	while float(business.rating) < float(ratings):
 		business = businesses[randint(0, total-1)]
+		businesses.remove(business)
+		total = len(businesses)
+	if business == 0:
+		return "a business wasn't found.."
+
+
 
 	jsonString = {
 	'name': str(business.name),
@@ -39,7 +48,7 @@ def getYelpResponse(lat, lon, keyword, distance, ratings):
 	'review_count': str(business.review_count),
 	'rating': str(business.rating),
 	'desc': str(business.snippet_text),
-	'location': str(business.location),
+	'coordinates': [business.location.coordinate.latitude, business.location.coordinate.longitude],
 	'deals': str(business.deals),
 	'phone': str(business.display_phone),
 	'rating_img': str(business.rating_img_url_large),
