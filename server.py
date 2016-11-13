@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 api = Api(app)
 
-def getYelpResponse(lat, lon, keyword):
+def getYelpResponse(lat, lon, keyword, distance, ratings):
 	auth = Oauth1Authenticator(
 	    consumer_key="836TVgpgYXuyjggygv_T2w",
 	    consumer_secret="LzvOSGMWAVv-bgkagkTrnW82QQ0",
@@ -21,9 +21,8 @@ def getYelpResponse(lat, lon, keyword):
 	client = Client(auth)
 
 	params = {
-	    'radius_filter':5000,
+	    'radius_filter':distance,
 	    'term':keyword
-	    #'cll':[loc[0],loc[1]]
 	    }
 
 	#location = raw_input("Enter your city or state to find the best persian resturant")
@@ -31,6 +30,9 @@ def getYelpResponse(lat, lon, keyword):
 	businesses = response.businesses
 	total = len(businesses)
 	business = businesses[randint(0, total-1)]
+	while float(business.rating) < ratings:
+		business = businesses[randint(0, total-1)]
+
 	jsonString = {
 	'name': str(business.name),
 	'img_url': str(business.image_url),
@@ -52,10 +54,14 @@ class CreateUser(Resource):
 	def post(self):
 		try:
 			#location = request.form['location']
+
 			parser = reqparse.RequestParser()
-			parser.add_argument('restuarant', type=unicode, help='restaurant')
+			parser.add_argument('keyword', type=unicode, help='keyword')
 			parser.add_argument('latitude', type=float, help='lat')
 			parser.add_argument('longitude', type=float, help='long')
+			parser.add_argument('distance', type=float, help='distance')
+			parser.add_argument('ratings', type=float, help='ratings')
+
 			args = parser.parse_args()
 
 			lat = request.form.get('latitude', None)
@@ -64,13 +70,19 @@ class CreateUser(Resource):
 			lon = request.form.get('longitude', None)
 			if lon is None:
 				lon = -73.5
-			foodtype = request.form.get('restaurant', None)
-			if foodtype is None:
-				foodtype = 'food'
+			keyword = request.form.get('keyword', None)
+			if keyword is None:
+				keyword = 'restaurant'
+			distance = request.form.get('distance', None)
+			if distance is None:
+				distance = 2000
+			ratings = request.form.get('ratings', None)
+			if ratings is None:
+				ratings = 1
 
 			#args['restaurant'] = getYelpResponse(lat, lon)
 			
-			return getYelpResponse(lat,lon, foodtype)#{'Restaurant': args['restaurant']}
+			return getYelpResponse(lat, lon, keyword, distance, ratings)
 
 		except Exception as e:
 			return {'error': str(e)}
