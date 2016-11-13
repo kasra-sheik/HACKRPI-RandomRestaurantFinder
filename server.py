@@ -39,7 +39,8 @@ def getYelpResponse(lat, lon):
 	'location': str(business.location),
 	'deals': str(business.deals),
 	'phone': str(business.display_phone),
-	'rating_img': str(business.rating_img_url)
+	'rating_img': str(business.rating_img_url),
+	'categories': list(business.categories)
 	}
 
 	return jsonString
