@@ -2,7 +2,6 @@ $(function() {
     $('button').click(function() {
         var keyword = $('#keyword').val();
         var distance = $('#range1').val();
-        alert(distance);
         $.ajax({
             url: '/',
             data: $('form').serialize(),

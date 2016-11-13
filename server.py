@@ -81,15 +81,15 @@ class CreateUser(Resource):
 			if lon is None:
 				lon = -73.5
 			keyword = request.form.get('keyword', None)
-			if keyword is None:
-				keyword = 'restaurant'
+			if keyword is None or str(keyword) == '':
+				keyword = 'food'
 			distance = request.form.get('distance', None)
 			if distance is None:
 				distance = 5000
 			ratings = request.form.get('ratings', None)
 			if ratings is None:
 				ratings = 1
-
+			print keyword, distance, ratings
 			#args['restaurant'] = getYelpResponse(lat, lon)
 			
 			return getYelpResponse(lat, lon, keyword, distance, ratings)
