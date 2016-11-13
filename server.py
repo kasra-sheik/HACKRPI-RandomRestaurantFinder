@@ -21,7 +21,7 @@ def getYelpResponse(lat, lon, keyword):
 	client = Client(auth)
 
 	params = {
-	    'radius_filter':40000,
+	    'radius_filter':5000,
 	    'term':keyword
 	    #'cll':[loc[0],loc[1]]
 	    }
@@ -57,11 +57,20 @@ class CreateUser(Resource):
 			parser.add_argument('latitude', type=float, help='lat')
 			parser.add_argument('longitude', type=float, help='long')
 			args = parser.parse_args()
-			lat = 43.7#request.form['latitude']
-			lon = -73.8#request.form['longitude']
+
+			lat = request.form.get('latitude', None)
+			if lat is None:
+				lat = 43.2
+			lon = request.form.get('longitude', None)
+			if lon is None:
+				lon = -73.5
+			foodtype = request.form.get('restaurant', None)
+			if foodtype is None:
+				foodtype = 'food'
+
 			#args['restaurant'] = getYelpResponse(lat, lon)
 			
-			return getYelpResponse(lat,lon, request.form['restaurant'])#{'Restaurant': args['restaurant']}
+			return getYelpResponse(lat,lon, foodtype)#{'Restaurant': args['restaurant']}
 
 		except Exception as e:
 			return {'error': str(e)}
@@ -71,7 +80,7 @@ class CreateUser(Resource):
 
 	@app.route('/testing')
 	def submitQuery():
-		return render_template('webUI.html')
+		return render_template('index.html')
 
 #	@app.route('/testingPOST', methods=['POST'])
 #	def submitPOST():
