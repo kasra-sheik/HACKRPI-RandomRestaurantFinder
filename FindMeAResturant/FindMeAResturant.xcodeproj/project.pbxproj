@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		696C0DCAF6804CD3099B65D0 /* Pods_FindMeAResturant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7BE74B277EC640BA918076 /* Pods_FindMeAResturant.framework */; };
+		CA1B08211DD7DFCD0092D0E5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B08201DD7DFCD0092D0E5 /* Restaurant.swift */; };
+		CA1B08231DD8334B0092D0E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B08221DD8334A0092D0E5 /* SettingsViewController.swift */; };
+		CAAC9F1A1DD7A3F100A8AE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAC9F191DD7A3F100A8AE35 /* AppDelegate.swift */; };
+		CAAC9F1C1DD7A3F100A8AE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAC9F1B1DD7A3F100A8AE35 /* ViewController.swift */; };
+		CAAC9F1F1DD7A3F100A8AE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAAC9F1D1DD7A3F100A8AE35 /* Main.storyboard */; };
+		CAAC9F221DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAAC9F201DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodeld */; };
+		CAAC9F241DD7A3F100A8AE35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAAC9F231DD7A3F100A8AE35 /* Assets.xcassets */; };
+		CAAC9F271DD7A3F100A8AE35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAAC9F251DD7A3F100A8AE35 /* LaunchScreen.storyboard */; };
+		CAAC9F301DD7B36E00A8AE35 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAC9F2F1DD7B36E00A8AE35 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6AC9A9F8B3B8F19EC13CF9FE /* Pods-FindMeAResturant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMeAResturant.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindMeAResturant/Pods-FindMeAResturant.release.xcconfig"; sourceTree = "<group>"; };
+		6D7BE74B277EC640BA918076 /* Pods_FindMeAResturant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMeAResturant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E01D6A073287F4FE33E044F /* Pods-FindMeAResturant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMeAResturant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindMeAResturant/Pods-FindMeAResturant.debug.xcconfig"; sourceTree = "<group>"; };
+		CA1B08201DD7DFCD0092D0E5 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CA1B08221DD8334A0092D0E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CAAC9F161DD7A3F100A8AE35 /* FindMeAResturant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeAResturant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAAC9F191DD7A3F100A8AE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CAAC9F1B1DD7A3F100A8AE35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAAC9F1E1DD7A3F100A8AE35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAAC9F211DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindMeAResturant.xcdatamodel; sourceTree = "<group>"; };
+		CAAC9F231DD7A3F100A8AE35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAAC9F261DD7A3F100A8AE35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAAC9F281DD7A3F100A8AE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAAC9F2F1DD7B36E00A8AE35 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAAC9F131DD7A3F100A8AE35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAAC9F301DD7B36E00A8AE35 /* CoreLocation.framework in Frameworks */,
+				696C0DCAF6804CD3099B65D0 /* Pods_FindMeAResturant.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		005F067C7870B0FB8A75FE99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E01D6A073287F4FE33E044F /* Pods-FindMeAResturant.debug.xcconfig */,
+				6AC9A9F8B3B8F19EC13CF9FE /* Pods-FindMeAResturant.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CAAC9F0D1DD7A3F100A8AE35 = {
+			isa = PBXGroup;
+			children = (
+				CAAC9F181DD7A3F100A8AE35 /* FindMeAResturant */,
+				CAAC9F171DD7A3F100A8AE35 /* Products */,
+				CAAC9F2E1DD7B36E00A8AE35 /* Frameworks */,
+				005F067C7870B0FB8A75FE99 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CAAC9F171DD7A3F100A8AE35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC9F161DD7A3F100A8AE35 /* FindMeAResturant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAAC9F181DD7A3F100A8AE35 /* FindMeAResturant */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC9F191DD7A3F100A8AE35 /* AppDelegate.swift */,
+				CAAC9F1B1DD7A3F100A8AE35 /* ViewController.swift */,
+				CA1B08221DD8334A0092D0E5 /* SettingsViewController.swift */,
+				CAAC9F1D1DD7A3F100A8AE35 /* Main.storyboard */,
+				CAAC9F231DD7A3F100A8AE35 /* Assets.xcassets */,
+				CAAC9F251DD7A3F100A8AE35 /* LaunchScreen.storyboard */,
+				CAAC9F281DD7A3F100A8AE35 /* Info.plist */,
+				CAAC9F201DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodeld */,
+				CA1B08201DD7DFCD0092D0E5 /* Restaurant.swift */,
+			);
+			path = FindMeAResturant;
+			sourceTree = "<group>";
+		};
+		CAAC9F2E1DD7B36E00A8AE35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC9F2F1DD7B36E00A8AE35 /* CoreLocation.framework */,
+				6D7BE74B277EC640BA918076 /* Pods_FindMeAResturant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAAC9F151DD7A3F100A8AE35 /* FindMeAResturant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAAC9F2B1DD7A3F100A8AE35 /* Build configuration list for PBXNativeTarget "FindMeAResturant" */;
+			buildPhases = (
+				C968AF45372937666ED6FA17 /* [CP] Check Pods Manifest.lock */,
+				CAAC9F121DD7A3F100A8AE35 /* Sources */,
+				CAAC9F131DD7A3F100A8AE35 /* Frameworks */,
+				CAAC9F141DD7A3F100A8AE35 /* Resources */,
+				A9A633A2A7A9D171BC246624 /* [CP] Embed Pods Frameworks */,
+				BE8F0A0FE224D85870994DBB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindMeAResturant;
+			productName = FindMeAResturant;
+			productReference = CAAC9F161DD7A3F100A8AE35 /* FindMeAResturant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAAC9F0E1DD7A3F100A8AE35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Kasra Sheik";
+				TargetAttributes = {
+					CAAC9F151DD7A3F100A8AE35 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 472Y33B64K;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CAAC9F111DD7A3F100A8AE35 /* Build configuration list for PBXProject "FindMeAResturant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAAC9F0D1DD7A3F100A8AE35;
+			productRefGroup = CAAC9F171DD7A3F100A8AE35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAAC9F151DD7A3F100A8AE35 /* FindMeAResturant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAAC9F141DD7A3F100A8AE35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAAC9F271DD7A3F100A8AE35 /* LaunchScreen.storyboard in Resources */,
+				CAAC9F241DD7A3F100A8AE35 /* Assets.xcassets in Resources */,
+				CAAC9F1F1DD7A3F100A8AE35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9A633A2A7A9D171BC246624 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindMeAResturant/Pods-FindMeAResturant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE8F0A0FE224D85870994DBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindMeAResturant/Pods-FindMeAResturant-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C968AF45372937666ED6FA17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAAC9F121DD7A3F100A8AE35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1B08211DD7DFCD0092D0E5 /* Restaurant.swift in Sources */,
+				CAAC9F221DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodeld in Sources */,
+				CAAC9F1C1DD7A3F100A8AE35 /* ViewController.swift in Sources */,
+				CA1B08231DD8334B0092D0E5 /* SettingsViewController.swift in Sources */,
+				CAAC9F1A1DD7A3F100A8AE35 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CAAC9F1D1DD7A3F100A8AE35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAAC9F1E1DD7A3F100A8AE35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAAC9F251DD7A3F100A8AE35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAAC9F261DD7A3F100A8AE35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAAC9F291DD7A3F100A8AE35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CAAC9F2A1DD7A3F100A8AE35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAAC9F2C1DD7A3F100A8AE35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E01D6A073287F4FE33E044F /* Pods-FindMeAResturant.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 472Y33B64K;
+				INFOPLIST_FILE = FindMeAResturant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sheik.FindMeAResturant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CAAC9F2D1DD7A3F100A8AE35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AC9A9F8B3B8F19EC13CF9FE /* Pods-FindMeAResturant.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 472Y33B64K;
+				INFOPLIST_FILE = FindMeAResturant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sheik.FindMeAResturant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAAC9F111DD7A3F100A8AE35 /* Build configuration list for PBXProject "FindMeAResturant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAAC9F291DD7A3F100A8AE35 /* Debug */,
+				CAAC9F2A1DD7A3F100A8AE35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAAC9F2B1DD7A3F100A8AE35 /* Build configuration list for PBXNativeTarget "FindMeAResturant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAAC9F2C1DD7A3F100A8AE35 /* Debug */,
+				CAAC9F2D1DD7A3F100A8AE35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CAAC9F201DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CAAC9F211DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodel */,
+			);
+			currentVersion = CAAC9F211DD7A3F100A8AE35 /* FindMeAResturant.xcdatamodel */;
+			path = FindMeAResturant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CAAC9F0E1DD7A3F100A8AE35 /* Project object */;
+}
